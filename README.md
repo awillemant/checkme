@@ -1,6 +1,6 @@
 # checkme #
-[![Build Status](https://travis-ci.com/ENZOBERNARD/checkme.svg?branch=open)](https://travis-ci.com/ENZOBERNARD/checkme)
-[![codecov](https://codecov.io/gh/ENZOBERNARD/checkme/branch/open/graph/badge.svg?token=BYQ6DHTR1V)](https://codecov.io/gh/ENZOBERNARD/checkme)
+[![Build Status](https://travis-ci.com/ENZOBERNARD/checkme.svg?branch=master)](https://travis-ci.com/ENZOBERNARD/checkme)
+[![codecov](https://codecov.io/gh/ENZOBERNARD/checkme/branch/master/graph/badge.svg?token=BYQ6DHTR1V)](https://codecov.io/gh/ENZOBERNARD/checkme)
 
 ## Basic checkme responders. ##
 
