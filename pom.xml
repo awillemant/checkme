@@ -1,0 +1,107 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>checkme</groupId>
+    <artifactId>checkme-parent</artifactId>
+    <version>2.5.2</version>
+    <description>Default checkme for your webapp</description>
+    <modules>
+        <module>checkme</module>
+        <module>checkme-http-handlers</module>
+        <module>checkme-mongodb</module>
+        <module>checkme-json-support</module>
+        <module>checkme-commons</module>
+        <module>checkme-demo</module>
+
+    </modules>
+    <packaging>pom</packaging>
+
+    <name>Checkme</name>
+    <description>Checkme is an endpoint that allows you to check the communication between an application of your project and an external service used by your application. For example a database, a search-engine or even another application of your project. You will configure a path, which lead to a page where it will be written "**OK**" if the communication is working, "**KO**" or any other response (Even an error) if not.</description>
+    <url>http://maven.apache.org</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>Enzo</id>
+            <name>Enzo Bernard</name>
+            <email>bernardenzo99@gmail.com</email>
+        </developer>
+        <developer>
+            <id>Amaury</id>
+            <name>Amaury Willemant</name>
+            <email></email>
+    </developer>
+
+    </developers>
+
+    <scm>
+        <url>https://svn.apache.org/viewvc/maven</url>
+    </scm>
+
+
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <servlet-version>4.0.1</servlet-version>
+        <slf4j-version>1.7.31</slf4j-version>
+        <logback-version>1.2.3</logback-version>
+        <junit-version>4.13.2</junit-version>
+        <assertj-version>3.20.2</assertj-version>
+        <h2-version>1.4.177</h2-version>
+        <commons-lang-version>3.12.0</commons-lang-version>
+        <gson-version>2.8.7</gson-version>
+        <json-version>20210307</json-version>
+        <mockito-version>3.11.2</mockito-version>
+        <mongodb-version>3.12.8</mongodb-version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                    <compilerArgs>
+                        <arg>-Xlint:unchecked</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.1</version>
+            </plugin>
+
+
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>ossrh</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <gpg.executable>C:/Software/Dev/GnuPG/gpg2.exe</gpg.executable>
+                <gpg.passphrase>xxxxxx</gpg.passphrase>
+            </properties>
+        </profile>
+    </profiles>
+
+
+
+</project>

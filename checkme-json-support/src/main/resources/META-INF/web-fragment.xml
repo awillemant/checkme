@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-fragment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://java.sun.com/xml/ns/javaee"
+
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-fragment_3_0.xsd"
+              id="WebFragment_checkme" version="3.0">
+
+    <name>checkme-json-support</name>
+
+
+    <filter>
+        <filter-name>jsonFilter</filter-name>
+        <filter-class>io.checkme.filter.JsonFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>jsonFilter</filter-name>
+        <url-pattern>/checkme/*</url-pattern>
+    </filter-mapping>
+
+</web-fragment>

@@ -1,0 +1,49 @@
+stages:
+  - compilation
+  - testing
+  - quality
+  - deploy
+
+before_script:
+  - echo CI Project Id = $CI_PROJECT_ID
+  - echo CI Project path = $CI_PROJECT_PATH
+  - echo CI Commit SHA = $CI_COMMIT_SHA
+  - echo CI Commit Ref Name = $CI_COMMIT_REF_NAME
+  - echo CI Commit Ref Slug = $CI_COMMIT_REF_SLUG
+
+variables:
+  MAVEN_OPTS: -Dfile.encoding=UTF-8 -Duser.timezone=UTC
+
+compile:
+  stage: compilation
+  script:
+    - 'mvn clean compile -DskipTests'
+  tags:
+    - docker-S
+
+test:
+    stage: testing
+    script:
+      - 'mvn clean package'
+    tags:
+      - docker-M
+
+
+image: registry-testing.kazan.atosworldline.com/kazan/awl-kazan-builder:jdk8-latest
+
+sonarqube:
+  stage: quality
+  script:
+    - 'mvn clean package'
+    - 'sonar-scanner -Dsonar.login=$SONAR_TOKEN'
+    - 'mvn org.jacoco:jacoco-maven-plugin:prepare-agent install -Dmaven.test.failure.ignore=false sonar:sonar -Psonar6,\!sonar4 $MAVEN_OPTS'
+  tags:
+    - docker-M
+
+deploy:
+  stage: deploy
+  script:
+    - 'mvn clean deploy -DskipTests'
+  tags:
+    - docker-S
+  when: manual

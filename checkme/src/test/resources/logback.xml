@@ -1,0 +1,12 @@
+<configuration>
+	<appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{ISO8601,UTC}Z|%-5p%marker|%t|%c{1}|%m%n</pattern>
+		</encoder>
+	</appender>
+
+	<root>
+		<level value="debug" />
+		<appender-ref ref="Console" />
+	</root>
+</configuration>
