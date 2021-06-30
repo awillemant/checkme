@@ -97,7 +97,7 @@
             </activation>
             <properties>
                 <gpg.executable>C:/Software/Dev/GnuPG/gpg2.exe</gpg.executable>
-                <gpg.passphrase>xxxxxx</gpg.passphrase>
+                <gpg.passphrase></gpg.passphrase>
             </properties>
         </profile>
     </profiles>
