@@ -18,7 +18,7 @@
 
     <name>Checkme</name>
     <description>Checkme is an endpoint that allows you to check the communication between an application of your project and an external service used by your application. For example a database, a search-engine or even another application of your project. You will configure a path, which lead to a page where it will be written "**OK**" if the communication is working, "**KO**" or any other response (Even an error) if not.</description>
-    <url>http://maven.apache.org</url>
+    <url>https://github.com/ENZOBERNARD/checkme</url>
 
     <licenses>
         <license>
