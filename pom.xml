@@ -16,10 +16,6 @@
     </modules>
     <packaging>pom</packaging>
 
-    <name>Checkme</name>
-    <description>Checkme is an endpoint that allows you to check the communication between an application of your project and an external service used by your application. For example a database, a search-engine or even another application of your project. You will configure a path, which lead to a page where it will be written "**OK**" if the communication is working, "**KO**" or any other response (Even an error) if not.</description>
-    <url>https://github.com/ENZOBERNARD/checkme</url>
-
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -30,15 +26,16 @@
 
     <developers>
         <developer>
+            <id>Amaury</id>
+            <name>Amaury Willemant</name>
+            <email></email>
+        </developer>
+        <developer>
             <id>Enzo</id>
             <name>Enzo Bernard</name>
             <email>bernardenzo99@gmail.com</email>
         </developer>
-        <developer>
-            <id>Amaury</id>
-            <name>Amaury Willemant</name>
-            <email></email>
-    </developer>
+
 
     </developers>
 
