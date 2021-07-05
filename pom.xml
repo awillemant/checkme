@@ -26,12 +26,11 @@
 
     <developers>
         <developer>
-            <id>Amaury</id>
+            <id>awilemant</id>
             <name>Amaury Willemant</name>
-            <email></email>
         </developer>
         <developer>
-            <id>Enzo</id>
+            <id>ebernard</id>
             <name>Enzo Bernard</name>
             <email>bernardenzo99@gmail.com</email>
         </developer>
@@ -96,9 +95,40 @@
             </plugin>
 
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>2.0.0</version>
+
+                <configuration>
+                    <verbose>false</verbose>
+                    <includes>
+                        <includes>**/*.java</includes>
+                    </includes>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>generate-license-headers</id>
+                        <goals>
+                            <goal>update-file-header</goal>
+                        </goals>
+                        <phase>process-sources</phase>
+                        <configuration>
+                            <licenseName>apache_v2</licenseName>
+                            <organizationName>checme</organizationName>
+                            <inceptionYear>2021</inceptionYear>
+                            <roots>
+                                <root>src/main/java</root>
+                                <root>src/test/java</root>
+                            </roots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>${version.plugin.gpg}</version>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
@@ -114,18 +144,6 @@
         </plugins>
     </build>
 
-    <profiles>
-        <profile>
-            <id>ossrh</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-            <properties>
-                <gpg.executable>C:/Software/Dev/GnuPG/gpg2.exe</gpg.executable>
-                <gpg.passphrase></gpg.passphrase>
-            </properties>
-        </profile>
-    </profiles>
 
 
 
